@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Review</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container review">
+    <h1>Review Answers</h1>
+    <div id="answerReview"></div>
+  </div>
+  <script>
+    // Retrieve the user's answers from local storage
+    const storedUserAnswers = localStorage.getItem('userAnswers');
+    if (storedUserAnswers) {
+      const userAnswers = JSON.parse(storedUserAnswers);
+
+      // Display the review on the review page
+      const answerReviewContainer = document.getElementById('answerReview');
+      answerReviewContainer.innerHTML = '';
+      for (let i = 0; i < userAnswers.length; i++) {
+        const questionData = questions[currentTopic][i];
+        const answerElement = document.createElement('div');
+        answerElement.classList.add('answer');
+
+        // Display the question
+        const questionElement = document.createElement('h4');
+        questionElement.textContent = questionData.question;
+        answerElement.appendChild(questionElement);
+
+        // Display the user's answer
+        const userAnswerElement = document.createElement('p');
+        userAnswerElement.textContent = `Your Answer: ${userAnswers[i]}`;
+        if (userAnswers[i] === questionData.correctAnswer) {
+          userAnswerElement.style.color = 'green'; // Mark correct answers in green
+        } else {
+          userAnswerElement.style.color = 'red'; // Mark incorrect answers in red
+        }
+        answerElement.appendChild(userAnswerElement);
+
+        // Display the correct answer
+        const correctAnswerElement = document.createElement('p');
+        correctAnswerElement.textContent = `Correct Answer: ${questionData.correctAnswer}`;
+        answerElement.appendChild(correctAnswerElement);
+
+        answerReviewContainer.appendChild(answerElement);
+      }
+    } else {
+      // Handle the case where there are no stored user answers
+      console.log('No user answers found.');
+    }
+  </script>
+</body>
+</html>
