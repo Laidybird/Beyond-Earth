@@ -231,26 +231,32 @@ const questions = {
 };
 
 function buildQuiz() {
-    const currentQuestionData = questions[currentTopic][currentQuestion];
-  
-    const card = document.createElement('div');
-    card.classList.add('card');
-    const questionElement = document.createElement('h4');
-    questionElement.textContent = currentQuestionData.question;
-    card.appendChild(questionElement);
-  
-    currentQuestionData.options.forEach((option) => {
-      const label = document.createElement('label');
-      label.innerHTML = `
-        <input type="radio" name="question${currentQuestion}" value="${option}">
-        ${option}
-      `;
-      card.appendChild(label);
-    });
-  
-    quizContainer.innerHTML = ''; // Clear the previous content
-    quizContainer.appendChild(card); // Add the new content
-  }
+  const currentQuestionData = questions[currentTopic][currentQuestion];
+
+  const card = document.createElement('div');
+  card.classList.add('card');
+  const questionElement = document.createElement('h4');
+  questionElement.textContent = currentQuestionData.question;
+
+  const optionsDiv = document.createElement('div'); // Create a div for answer options
+
+  currentQuestionData.options.forEach((option) => {
+    const label = document.createElement('label');
+    label.innerHTML = `
+      <input type="radio" name="question${currentQuestion}" value="${option}">
+      ${option}
+    `;
+    optionsDiv.appendChild(label); // Append labels to the optionsDiv
+  });
+
+  card.appendChild(questionElement);
+  card.appendChild(optionsDiv); // Append the optionsDiv to the card
+
+  quizContainer.innerHTML = ''; // Clear the previous content
+  quizContainer.appendChild(card); // Add the new content
+}
+
+
 
   function showResult() {
     const selectedOption = quizContainer.querySelector(`input[name=question${currentQuestion}]:checked`);

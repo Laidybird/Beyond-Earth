@@ -1,5 +1,6 @@
 body {
   font-family: Arial, sans-serif;
+  background-color: rgb(151, 226, 221);
 }
 
 .container {
@@ -20,7 +21,21 @@ h1 {
 #quiz {
   margin-bottom: 20px;
 }
+.card {
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+}
 
+.card div {
+  text-align: left; /* Align the answer options to the left */
+}
+
+.card label {
+  display: block;
+  margin-bottom: 5px; /* Add margin between answer options */
+}
 .question {
   margin-bottom: 10px;
 }
