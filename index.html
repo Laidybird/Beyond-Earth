@@ -9,22 +9,30 @@
 </head>
 <body>
   <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#" onclick="changeTopic('General Knowledge')">General Knowledge</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" onclick="changeTopic('Science')">Science</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" onclick="changeTopic('Geography')">Geography</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" onclick="changeTopic('Math')">Math</a>
-        </li>
-      </ul>
-    </nav>
+    <div class="card-container">
+      <div class="card nav-card general-knowledge" onclick="changeTopic('General Knowledge')">
+        <div class="card-body">
+          <h5 class="card-title">General Knowledge</h5>
+        </div>
+      </div>
+      <div class="card nav-card science" onclick="changeTopic('Science')">
+        <div class="card-body">
+          <h5 class="card-title">Science</h5>
+        </div>
+      </div>
+      <div class="card nav-card geography" onclick="changeTopic('Geography')">
+        <div class="card-body">
+          <h5 class="card-title">Geography</h5>
+        </div>
+      </div>
+      <div class="card nav-card math" onclick="changeTopic('Math')">
+        <div class="card-body">
+          <h5 class="card-title">Math</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  
     <h1 id="topicTitle">General Knowledge Quiz</h1>
     <div id="quiz"></div>
     <button id="submit">Submit</button>
@@ -35,7 +43,7 @@
     </div>
     <div id="answerReview" style="display: none;"></div> <!-- Move this div here -->
   </div>
-
   <script src="quiz.js"></script>
 </body>
 </html>
+

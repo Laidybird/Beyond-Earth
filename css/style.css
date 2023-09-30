@@ -1,16 +1,26 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: rgb(151, 226, 221);
+  background-color: rgb(10, 44, 41);
 }
 
 .container {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
+  background-color: transparent;
 }
+/* Target the navbar and set its background color to match the body */
+/* Target the navbar and remove its background color */
+.navbar {
+  background-color: transparent; /* Set the background to transparent */
+  box-shadow: none; /* Remove any box shadow if present */
+}
+
+
 
 h1 {
   text-align: center;
+  color: #ccc;
 }
 
 #result {
@@ -19,17 +29,21 @@ h1 {
 }
 
 #quiz {
-  margin-bottom: 20px;
-}
-.card {
-  text-align: center;
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin: 10px;
+  padding: 20px;/* Use !important to override any conflicting styles */
 }
 
+.card  {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a box shadow here */
+  color: #eceaea;
+}
+
+
 .card div {
-  text-align: left; /* Align the answer options to the left */
+  text-align: left;
 }
 
 .card label {
@@ -95,3 +109,44 @@ p {
 #reviewAnswers:hover {
   background-color: #0056b3;
 }
+/* Custom styles for topic buttons */
+/* Define custom styles for topic buttons */
+/* Define custom styles for topic buttons */
+/* Define custom styles for topic buttons */
+.nav-card {
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: #eceaea; /* Set text color to white */
+  padding: 10px; /* Add padding to all sides of the card */
+  margin: 5px;
+}
+
+/* Rest of your styles for each card class and hover effect remain the same as previously mentioned */
+
+
+.general-knowledge {
+  background-color: #ff5733; /* Set the background color for General Knowledge card */
+}
+
+.science {
+  background-color: #33ff57; /* Set the background color for Science card */
+}
+
+.geography {
+  background-color: #5733ff; /* Set the background color for Geography card */
+}
+
+.math {
+  background-color: #ff5733; /* Set the background color for Math card */
+
+}
+
+.nav-card:hover {
+  background-color: #444;
+}
+
+.nav-card h5 {
+  text-align: center;
+}
+
+/* Add additional styles to customize your cards as needed */
