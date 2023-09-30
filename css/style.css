@@ -16,8 +16,6 @@ body {
   box-shadow: none; /* Remove any box shadow if present */
 }
 
-
-
 h1 {
   text-align: center;
   color: #ccc;
@@ -40,7 +38,11 @@ h1 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a box shadow here */
   color: #eceaea;
 }
-
+.card-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px; /* Adjust the margin as needed */
+}
 
 .card div {
   text-align: left;
@@ -83,6 +85,7 @@ button:hover {
 
 #answerReview {
   max-width: 800px;
+  margin-left: 60px;
 }
 
 .answer {
@@ -91,10 +94,14 @@ button:hover {
 
 h4 {
   font-size: 18px;
+  color:aliceblue;
 }
-
+h2 {
+  color:antiquewhite;
+}
 p {
   font-size: 16px;
+  color:aliceblue;
 }
 
 #reviewAnswers {
@@ -137,7 +144,7 @@ p {
 }
 
 .math {
-  background-color: #ff5733; /* Set the background color for Math card */
+  background-color: #e9640c; /* Set the background color for Math card */
 
 }
 
